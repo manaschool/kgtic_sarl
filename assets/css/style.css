@@ -160,8 +160,10 @@ Default CSS
   height: 0;
   background-color: #19233c;
   color: #ffffff;
-  -webkit-transition: width 0.5s ease-in-out,  height 0.5s ease-in-out;
-  transition: width 0.5s ease-in-out,  height 0.5s ease-in-out;
+  -webkit-transition: width 0.5s ease-in-out, 
+ height 0.5s ease-in-out;
+  transition: width 0.5s ease-in-out, 
+ height 0.5s ease-in-out;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   z-index: -1;
@@ -1247,7 +1249,7 @@ Navbar Area CSS
 Banner Area CSS
 =================================================*/
 .banner-area {
-  background-image: url("../img/banner/banner-1.jpg");
+  /* background-image: url("../img/banner/banner-1.jpg"); */
   background-attachment: fixed;
   background-size: cover;
   background-position: center center;

@@ -1,0 +1,272 @@
+
+ 1)===============Pour les articles ===================================
+    // var_dump($obj_tous_post);
+    
+    /*
+    pour le detail d'un article
+     $url 2 parametre: @param mixed $matricule_de_entreprise et @param mixed $matricule_du_post
+    */
+    // $url='https://akila.blog/api_text/api/produit/11885230316/61421230330';
+    // $url="https://akila.blog/api_text/api/produit/matricule_de_entreprise/matricule_du_post";
+    
+    /*
+        les information recu dans url.
+        $url=[
+            {
+                "id": "Id du post",
+                "photo": "Photo du post",
+                "titre": "Titre du post",
+                "content":"Contenue du post",
+                "matricule": "61421230330",
+                "date": "Date de publication",
+                "time": "Heure de publication",
+                "datetime": "Date et heure de publication",
+                "id_categorie": "Id de la categorie",
+                "user_admin": "Nom du redacteur du post",
+                "matricule_entreprise": " Matricule de l'entreprise",
+                "publie": "Status de la post vari entre 1 et 2 ; (1 en brouillon et 2 publier) ",
+                "mots_cles": "les mots clés du post separer par un /",
+                "img_vedette": "Image vedette du post",
+                "meta_description": " la meta descripton",
+                "meta_titre": " le titre du meta",
+                "siviteurs": "Nbre de visiteurs du post",
+                "jaime": "0",
+                "matricule_admin": "Matricule du redacteur du post",
+                "lien_service": " Lien sur le service que pose le poste",
+                "call_action": "le message de appele à l'action"
+            }
+        ]
+    */
+    
+    // $data= file_get_contents($url);
+    // $obj= json_decode($data);
+    
+    /*
+        exemple d'affichaage des donnees;
+        variable = $obj[0] -> value;
+            ex: pour affichier id du post:
+                $id = $obj[0]->id;
+    */
+
+// ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+    
+ 2)===============pour le detail d'un article ===================================
+    
+     $url 1 parametre: @param mixed $matricule_de_entreprise 
+    */
+    // $url="https://akila.blog/api_text/api/produit/$matricule_entreprise";
+    
+    /*
+        recuper tout les posts de l'entreprise.
+        $url=[
+            {
+                "id": "Id du post",
+                "photo": "Photo du post",
+                "titre": "Titre du post",
+                "content":"Contenue du post",
+                "matricule": "61421230330",
+                "date": "Date de publication",
+                "time": "Heure de publication",
+                "datetime": "Date et heure de publication",
+                "id_categorie": "Id de la categorie",
+                "user_admin": "Nom du redacteur du post",
+                "matricule_entreprise": " Matricule de l'entreprise",
+                "publie": "Status de la post vari entre 1 et 2 ; (1 en brouillon et 2 publier) ",
+                "mots_cles": "les mots clés du post separer par un /",
+                "img_vedette": "Image vedette du post",
+                "meta_description": " la meta descripton",
+                "meta_titre": " le titre du meta",
+                "siviteurs": "Nbre de visiteurs du post",
+                "jaime": "0",
+                "matricule_admin": "Matricule du redacteur du post",
+                "lien_service": " Lien sur le service que pose le poste",
+                "call_action": "le message de appele à l'action"
+            }
+            {
+               ....
+            }
+            {
+               ....
+            }
+        ]
+    */
+    
+    // $data_tous_posts= file_get_contents($url);
+    // $obj_tous_post= json_decode($data_tous_posts); 
+    
+    /*
+        exemple pour afficher tous les titres;
+            $i=0;
+        foreach ($obj_tous_post as $value) {
+            echo $i++ ."\n";
+        echo $value->titre;
+        }
+    */
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+// $matricule_entreprise1='11885230316';
+
+//-------------------- les informations de la quategorie
+
+$url_visiteur= "https://akila.blog/api_text/api_new/categorie_vues";
+
+    $data = array( 
+           'matricule_entreprise' =>  $matricule_entreprise, 
+           );
+
+        $options = array(
+            'http' => array(
+            'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+            'method'  => 'POST',
+            'content' => http_build_query($data)
+            )
+        );
+
+        $context = stream_context_create($options);
+        $result= file_get_contents($url_visiteur, false, $context);
+        $categories = json_decode($result);
+        if ($categories === FALSE) { /* Handle error */ }
+        var_dump($categories);
+
+        les information recu dans $categories.
+        $categories =[
+            {
+                "id": "Id du post",
+                "nom": " de la categorie",
+                "date": "date de l'on a fait la post",
+                "matricule_cat": " le matricule de la categorie",
+                "matricule_entreprise": " Matricule de l'entreprise",
+            }
+        ]
+    */
+
+3)========================= les information sur l'entreprise ========================================
+
+  id                      = identifiant
+  nom_entreprise          = Nom de l'entreprise
+  cours_nom               = Cour nom de l'entreprise
+  matricule_entreprise    = matricule de l'entreprise
+  matricule_admin         = Matricule de l'entreprise
+  pays                    = Le pays de l';
+  ville                   = Ville 
+  region                  = la region
+  email                   = L'email;
+  quartier                = le quartier;
+  telephone               = Telephone;
+  logo                    = Logo de l'entreprise
+  color1                  = Couleur principal
+  color2                  = couleurs secondaire
+  google_map              = la Map de google
+
+  decription              = decription de l'entreprise
+  pixel_fb                = le Pixels facebook
+  lien_fb                 = Lien facebook;
+  lien_linkedin           = Lien Linkedin
+  twitter                 = lien Twitter
+  youtube                 = Lien youtube
+  instagram               = Lin instagram
+  whatsapp                =Numero WhatsApp;
+  titre_service=&gt;
+  string(41) "Nos solutions disponible pour vous servir"
+  titre_blog=&gt;
+  string(43) "Tous les articles récents de notre journal"
+  titre_member=&gt;
+  string(39) "Membre exécutif supérieur Responsable"
+  bouton_whatsapp=&gt;
+  string(3) "oui"
+  page404=&gt;
+  string(3) "non"
+  page1=&gt;
+  string(7) "Accueil"
+  page2=&gt;
+  string(13) "Nos solutions"
+  page3=&gt;
+  string(4) "Blog"
+  page4=&gt;
+  string(7) "Contact"
+  banniere=&gt;
+  string(1) "1"
+  mention_titre=&gt;
+  string(11) "Nos succès"
+  mention_des=&gt;
+  string(66) "La détermination est le facteur le plus important de la réussite"
+  mention1=&gt;
+  string(2) "20"
+  mention_titre1=&gt;
+  string(15) "Projet terminé"
+  mention2=&gt;
+  string(2) "17"
+  mention_titre2=&gt;
+  string(22) "Des clients satisfaits"
+  mention3=&gt;
+  string(2) "25"
+  mention_titre3=&gt;
+  string(12) "Total gagné"
+  mention4=&gt;
+  string(2) "35"
+  mention_titre4=&gt;
+  string(15) "Prix remportés"
+  nom_domaine=&gt;
+  NULL
+  onsite=&gt;
+  string(1) "1"
+  page_vente=&gt;
+  string(3) "oui"
+  articles=&gt;
+  string(1) "1"
+  site_actu=&gt;
+  string(1) "1"
+*/
+
+4)========info de l'Admin du pos 
+object(stdClass)#4 (4) {
+  ["nom"]=&gt;
+  string(6) "bayiha"
+  ["prenom"]=&gt;
+  string(9) "dieudonne"
+  ["tel"]=&gt;
+  string(14) "+237 690386539"
+  ["profil"]=&gt;
+  string(25) "23-08-03-36akila_blog.png"
+}
+
+5) /*===========Information des partenaire ==============
+ id                        =>
+ matricule_entreprise      => 
+ logo                      => 
+ nom                       => 
+ lien_site                 => 
+ at_date                   =>
+*/
+
+6)=============Information de l'equipe===================
+
+object(stdClass)#5 (13) {
+  ["id"]=>
+  string(2) "39"
+  ["matricule_entreprise"]=>
+  string(13) "654b7262c7d05"
+  ["nom"]=>
+  string(7) "Cabrole"
+  ["prenom"]=>
+  string(8) "leugueng"
+  ["email"]=>
+  string(30) "cabroleleugueng@manaschool.net"
+  ["poste"]=>
+  string(23) "Assistante de Direction"
+  ["telephone"]=>
+  string(0) ""
+  ["lien_fb"]=>
+  string(0) ""
+  ["lien_link"]=>
+  string(0) ""
+  ["lien_what"]=>
+  string(0) ""
+  ["lien_twit"]=>
+  string(0) ""
+  ["photo_memb"]=>
+  string(25) "24-02-02-52akila_blog.jpg"
+  ["at_date"]=>
+  string(19) "2024-02-02 02:30:52"
+}
