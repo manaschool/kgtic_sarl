@@ -1,7 +1,7 @@
 <?php
 
 //--------------------- lien pour les images 88732230809
-$lien_logo ="https://akila.blog/@ressouce/logo_site/";        // lien du logo de l'entreprise
+$lien_logo ="https://akila.blog/logo_site/";        // lien du logo de l'entreprise
 
 // $matricule_entreprise="1011121121";
 // $matricule_entreprise="654b7262c7d05";
@@ -74,7 +74,7 @@ stdClass Object
     [titre_member] => Notre équipe technique
     [bouton_whatsapp] => oui
     [page404] => non
-    
+
     [page1] => Accueil
     [page2] => Services
     [page3] => blog

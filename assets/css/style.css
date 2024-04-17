@@ -1669,6 +1669,7 @@ Offer Area CSS
   opacity: .75;
 }
 
+/*
 .offer-card.bg-1 {
   background-image: url("../img/offer/offer-1.jpg");
 }
@@ -1691,7 +1692,7 @@ Offer Area CSS
 
 .offer-card.bg-6 {
   background-image: url("../img/offer/offer-6.jpg");
-}
+} */
 
 .offer-card .bg-white {
   background-color: #ffffff;
@@ -1818,7 +1819,7 @@ Support & team Area CSS
 }
 
 .best-support {
-  background-image: url("../img/support-bg.jpg");
+  /* background-image: url("../img/support-bg.jpg"); */
   background-size: cover;
   background-position: center center;
   padding: 140px 0;

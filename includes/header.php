@@ -2,11 +2,11 @@
 <style>
      .ba{
             width: 6rem;
-            border-radius: 10%;
+            border-radius: 20%;
         }
 
         .b{
-            width: 4rem;
+            width: 3rem;
             border-radius: 10%;
         }
 </style>
@@ -48,17 +48,17 @@
                             <div class="right-alignment">
                                 <ul class="socials-link">
                                     <li>Suivez-nous :</li>
-                                    <?php if(!empty($info_header->lien_fb)): ?>
-                                        <li><a href="<?= $info_header->lien_fb?>"><i class="lab la-facebook-f"></i></a></li>
+                                    <?php if(!empty($lien_facebook)): ?>
+                                        <li><a href="<?= $lien_facebook?>"><i class="lab la-facebook-f"></i></a></li>
                                     <?php endif ?>
-                                    <?php if(!empty($info_header->lien_twitter)): ?>
-                                        <li><a href="<?= $info_header->lien_twitter ?>"><i class="lab la-twitter"></i></a></li>
+                                    <?php if(!empty($lien_twitter)): ?>
+                                        <li><a href="<?= $lien_twitter ?>"><i class="lab la-twitter"></i></a></li>
                                     <?php endif ?>
-                                    <?php if(!empty($info_header->youtube)): ?>
-                                        <li><a href="<?= $info_header->youtube ?>"><i class="lab la-youtube"></i></a></li>
+                                    <?php if(!empty($youtube)): ?>
+                                        <li><a href="<?= $youtube ?>"><i class="lab la-youtube"></i></a></li>
                                     <?php endif ?>
-                                    <?php if(!empty($info_header->instagram)): ?>
-                                        <li><a href="<?= $info_header->instagram ?>"><i class="lab la-instagram"></i></a></li>
+                                    <?php if(!empty($instagram)): ?>
+                                        <li><a href="<?= $instagram ?>"><i class="lab la-instagram"></i></a></li>
                                     <?php endif ?>
                                 </ul>
                                 <ul class="flag-area">
@@ -116,8 +116,8 @@
                     <div class="main-responsive-menu">
                         <div class="logo">
                             <a href="home">
-                                <img src="<?=$lien_logo . $info_header->logo?>" class="main-logo b" alt="image">
-                                <img src="<?=$lien_logo . $info_header->logo?>" class="white-logo b" alt="image">
+                                <img src="<?=$lien_logo . $logo?>" class="main-logo b" alt="image">
+                                <img src="<?=$lien_logo . $logo?>" class="white-logo b" alt="image">
                             </a>
                         </div>
                     </div>
@@ -128,14 +128,14 @@
                 <div class="container">
                     <nav class="navbar navbar-expand-md navbar-light">
                         <a class="navbar-brand" href="home">
-                            <img src="<?=$lien_logo . $info_header->logo?>" class="ba" alt="image">
+                            <img src="<?=$lien_logo . $logo?>" class="ba" alt="image">
                         </a>
                         <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                             <ul class="navbar-nav ml-auto">
                                 
                                 <li class="nav-item">
                                     <a href="home" class="nav-link <?= prenPage()=='index.php' ? 'active':'' ?>">
-                                        <?=!empty($info_header->page1) ?$info_header->page1 :"Accueil" ?>
+                                        <?=!empty($page_nemu1) ?$page_nemu1 :"Accueil" ?>
                                     </a>
                                 </li>
 
@@ -147,13 +147,13 @@
 
                                 <li class="nav-item">
                                     <a href="services" class="nav-link <?= prenPage()=='services.php' ? 'active':'' ?>">
-                                    <?=!empty($info_header->page1) ?$info_header->page2 :"Service" ?>    
+                                    <?=!empty($page_nemu2) ?$page_nemu2 :"Service" ?>    
                                     </a>
                                 </li>
 
                                 <li class="nav-item">
                                     <a href="contact" class="nav-link <?= prenPage()=='contact.php' ? 'active':'' ?>">
-                                        <?=!empty($info_header->page1) ?$info_header->page4 :"Contact" ?>  
+                                        <?=!empty($page_nemu3) ? $page_nemu3 :"Contact" ?>  
                                     </a>
                                 </li>
                             </ul>
@@ -162,7 +162,7 @@
                                     <div class="support">
                                         <i class="las la-headset"></i>
                                         <p>Contactez nous !</p>
-                                        <a href="tel:<?= $info_header->whatsapp?>"><?= $info_header->telephone ?></a>
+                                        <a href="tel:<?=$whatsapp?>"><?= $telephone ?></a>
                                     </div>
                                 </div>
                             </div>

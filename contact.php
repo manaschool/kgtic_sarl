@@ -1,3 +1,4 @@
+<?php include "api/cle_api.php" ?>
 <!doctype html>
 <html lang="zxx">
 

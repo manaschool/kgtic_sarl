@@ -75,6 +75,7 @@ stdClass Object
     [titre_banniere_service] => Tous nos services
     [titre_banniere_blog] => Tous nos posts
     [titre_banniere_member] => 
+
     [titre_s] => Notre particularité
     [titre_s1] => Accompagnement
     [discription_s1] => Nous vous accompagnons de bout en bout dans vos démarches jusqu'à l'obtention de vos document .
@@ -82,6 +83,7 @@ stdClass Object
     [description_s2] => Nous apportons des conseil pour prendre de bonne décisions durant la période de voyage
     [titre_s3] => Le suivis des clients
     [description_s3] => Nous suivons nos clients même après, être arrivé  à leur destination.
+    
     [mention_titre] => Nos succès
     [mention_des] => 
     [mention1] => 20

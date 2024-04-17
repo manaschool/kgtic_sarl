@@ -1,5 +1,5 @@
 RewriteEngine On
 RewriteRule ^home$ index.php 
 RewriteRule ^([a-z-]+)$ $1.php 
-#RewriteRule ^(.*)-([a-z0-9-]+)$ blog-details.php?mat=$2
+RewriteRule ^blog-details/(.*)-([a-z0-9-]+)$ blog-details.php?mat_post=$2
 #RewriteRule ^home#solutions$ index.php#solutions 

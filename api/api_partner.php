@@ -15,7 +15,7 @@ function info_partenaire(){
     ];
     $postdata = http_build_query($fields);
     $ch = curl_init();
-    curl_setopt($ch,CURLOPT_URL, 'https://akila.blog/api_text/api_new/info_partenaire');
+    curl_setopt($ch,CURLOPT_URL, 'https://akila.blog/api/info_partenaire');
     curl_setopt($ch,CURLOPT_POST, true);
     curl_setopt($ch,CURLOPT_POSTFIELDS, $postdata);
     curl_setopt($ch,CURLOPT_RETURNTRANSFER, true);
